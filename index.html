@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warung Manop — Semua Ada, Satu Tempat</title>
+
+  <!-- Open Graph / Link Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://warungmanop.netlify.app/" />
+  <meta property="og:title" content="Warung Manop — Warung Serba Ada di Kelapa Gading Timur">
+  <meta property="og:description" content="Sembako, top up game, token listrik, tarik & setor tunai, gas & galon — semua ada di Warung Manop, Kelapa Gading Timur, Jakarta Utara!">
+  <meta property="og:image" content="https://warungmanop.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="id_ID" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Warung Manop — Warung Serba Ada di Kelapa Gading Timur">
+  <meta name="twitter:description" content="Sembako, top up game, token listrik, tarik & setor tunai, gas & galon — semua ada di Warung Manop!" > 
+  <meta name="twitter:image" content="https://warungmanop.netlify.app/og-image.png">
+  <meta name="description" content="Warung serba ada di Kelapa Gading Timur, Jakarta Utara. Sembako, top up game, token listrik, tarik & setor tunai, dan masih banyak lagi!">
+  <link rel="icon" type="image/png" href="favicon (2).png"/>
+  <link rel="apple-touch-icon" href="favicon (2).png"/>
+  <style>
+/* =============================================
+   WARUNG MANOP — style.css
+   Aesthetic: Warm Editorial × Indonesian Warmth
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── VARIABLES ── */
+:root {
+  --cream:    #FBF6EE;
+  --cream-2:  #F3EDE0;
+  --cream-3:  #E8DFD0;
+  --brown:    #2C1A0E;
+  --brown-2:  #5C3D24;
+  --brown-3:  #8B6344;
+  --amber:    #C4622A;
+  --amber-2:  #E8803A;
+  --gold:     #D4A843;
+  --dark:     #12090400;
+  --dark-1:   #1A0F06;
+  --dark-2:   #2C1A0E;
+  --text:     #2C1A0E;
+  --text-2:   #5C3D24;
+  --text-3:   #8B6344;
+  --border:   rgba(44,26,14,0.12);
+  --border-2: rgba(44,26,14,0.22);
+  --shadow:   0 4px 24px rgba(44,26,14,0.10);
+  --shadow-2: 0 12px 48px rgba(44,26,14,0.16);
+  --radius:   12px;
+  --radius-2: 20px;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-2); }
+::-webkit-scrollbar-thumb { background: var(--brown-3); border-radius: 3px; }
+
+/* ============================================================
+   LANDING PAGE
+   ============================================================ */
+.landing {
+  min-height: 100vh;
+  background: var(--cream);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Grain texture overlay */
+.landing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Decorative circles */
+.landing::after {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,98,42,0.08) 0%, transparent 70%);
+  top: -200px; right: -200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landing-bg-circle {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,168,67,0.07) 0%, transparent 70%);
+  bottom: -150px; left: -100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── LANDING NAV ── */
+.landing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 3rem;
+  position: relative;
+  z-index: 10;
+}
+/* ── NAV LOGO ── */
+.nav-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.landing-brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--brown);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.landing-brand span { color: var(--amber); font-style: italic; }
+.landing-nav-links { display: flex; gap: 2rem; align-items: center; }
+.landing-nav-links a {
+  font-size: 13px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+.landing-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--amber);
+  transition: width 0.25s ease;
+}
+.landing-nav-links a:hover { color: var(--amber); }
+.landing-nav-links a:hover::after { width: 100%; }
+
+/* ── HERO ── */
+.landing-hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 2rem 3rem 3rem;
+  gap: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-left { }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: slideRight 0.7s ease 0.2s forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1.5px;
+  background: var(--amber);
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.0;
+  color: var(--brown);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: slideRight 0.7s ease 0.35s forwards;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--amber);
+  display: block;
+}
+.hero-sub {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.75;
+  max-width: 400px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: slideRight 0.7s ease 0.5s forwards;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: slideRight 0.7s ease 0.65s forwards;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(196,98,42,0.3);
+}
+.btn-primary:hover {
+  background: #a8521f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(196,98,42,0.4);
+}
+.btn-primary:active { transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border-2);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-outline:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-3px);
+}
+
+/* Hero right: floating grid */
+.hero-right {
+  position: relative;
+  height: 480px;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.5s forwards;
+}
+.float-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  height: 100%;
+}
+.float-card {
+  background: #FFFCF8;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+  animation: floatBob var(--bob-dur, 4s) ease-in-out var(--bob-delay, 0s) infinite;
+  cursor: default;
+}
+.float-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: var(--shadow-2);
+  border-color: var(--amber);
+}
+.float-card .fc-icon { font-size: 2.2rem; line-height: 1; }
+.float-card .fc-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+}
+.float-card:nth-child(1) { --bob-dur: 5s; --bob-delay: 0s; align-self: start; margin-top: 20px; }
+.float-card:nth-child(2) { --bob-dur: 4s; --bob-delay: 0.5s; align-self: end; margin-bottom: 30px; }
+.float-card:nth-child(3) { --bob-dur: 6s; --bob-delay: 1s; align-self: center; }
+.float-card:nth-child(4) { --bob-dur: 4.5s; --bob-delay: 1.5s; align-self: start; margin-top: 60px; }
+.float-card:nth-child(5) { --bob-dur: 5.5s; --bob-delay: 0.8s; align-self: end; margin-bottom: 10px; }
+.float-card:nth-child(6) { --bob-dur: 4.2s; --bob-delay: 1.2s; align-self: center; }
+
+/* Scroll hint */
+.scroll-hint {
+  text-align: center;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  position: relative;
+  z-index: 5;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   STICKY NAV
+   ============================================================ */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.6rem;
+  background: rgba(251,246,238,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.main-nav-brand {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brown);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main-nav-brand span { color: var(--amber); font-style: italic; }
+.main-nav-links { display: flex; gap: 0.45rem; }
+.main-nav-links a {
+  font-size: 11px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.main-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--amber);
+  transition: width 0.25s;
+}
+.main-nav-links a:hover { color: var(--amber); }
+.main-nav-links a:hover::after { width: 100%; }
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section { padding: 2.5rem 2.5rem; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--amber);
+  letter-spacing: 0.08em;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--brown);
+  letter-spacing: -0.01em;
+}
+
+/* ── HERO SECTION (below nav) ── */
+.page-hero {
+  padding: 3rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+}
+.page-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(196,98,42,0.3);
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--brown);
+  margin-bottom: 1rem;
+}
+.page-hero h1 span {
+  color: var(--text-3);
+  font-style: italic;
+}
+.page-hero p {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.75;
+  max-width: 540px;
+}
+
+/* ── GRIDS ── */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+
+/* ── CARDS ── */
+.card {
+  background: #FFFCF8;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease, border-color 0.3s;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(196,98,42,0.04), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 0 16px 48px rgba(44,26,14,0.14);
+  border-color: rgba(196,98,42,0.3);
+}
+.card:hover::before { opacity: 1; }
+.card:active { transform: translateY(-2px) rotate(0deg); }
+
+.card-icon {
+  width: 48px; height: 48px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+.card:hover .card-icon { transform: scale(1.15) rotate(-5deg); }
+
+.card h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; color: var(--brown); }
+.card p { font-size: 12.5px; color: var(--text-2); line-height: 1.6; }
+.card-hint {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+.card:hover .card-hint { color: var(--amber); }
+.card-arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.card:hover .card-arrow { transform: translateX(4px); }
+
+.ic-green  { background: #EAF3DE; }
+.ic-amber  { background: #FAEEDA; }
+.ic-teal   { background: #E1F5EE; }
+.ic-blue   { background: #E6F1FB; }
+.ic-purple { background: #EEEDFE; }
+.ic-coral  { background: #FAECE7; }
+.ic-orange { background: #FDE8D8; }
+
+/* ── DIVIDER ── */
+.divider { height: 1px; background: var(--border); margin: 0 2.5rem; }
+
+/* ── INFO ROW ── */
+.info-row {
+  display: flex;
+  gap: 0;
+  background: var(--cream-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.info-block {
+  flex: 1;
+  min-width: 140px;
+  padding: 1.75rem 2rem;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.info-block:last-child { border-right: none; }
+.info-block:hover { background: var(--cream-3); }
+.info-block .lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
+.info-block .val { font-size: 14px; color: var(--brown); line-height: 1.7; }
+.info-block a { color: var(--amber); text-decoration: none; transition: opacity 0.2s; }
+.info-block a:hover { opacity: 0.8; }
+
+.wa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  background: var(--brown);
+  color: var(--cream);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.wa-pill:hover { background: var(--amber); transform: translateY(-2px); }
+.wa-dot { width: 7px; height: 7px; border-radius: 50%; background: #25D366; flex-shrink: 0; }
+
+.pay-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border: 1px solid var(--border-2);
+  border-radius: 4px;
+  color: var(--text-2);
+  margin: 2px 2px 0 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pay-tag:hover { border-color: var(--amber); color: var(--amber); }
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+.contact-section { padding: 2.5rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.map-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  height: 360px;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+.map-wrap:hover { box-shadow: var(--shadow-2); }
+.map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.contact-form {
+  background: #FFFCF8;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-form h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--brown);
+}
+.contact-form .sub { font-size: 12.5px; color: var(--text-2); }
+
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+}
+.form-group input, .form-group textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--amber);
+  background: #FFFCF8;
+  box-shadow: 0 0 0 3px rgba(196,98,42,0.08);
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-3); }
+.form-group input.error { border-color: #E24B4A; background: #fff8f8; }
+.form-group .err-msg { font-size: 11px; color: #E24B4A; display: none; }
+.form-group .err-msg.show { display: block; }
+
+.btn-send {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 24px;
+  background: var(--brown);
+  color: var(--cream);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.04em;
+}
+.btn-send:hover {
+  background: var(--amber);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(196,98,42,0.3);
+}
+.form-success { display: none; text-align: center; padding: 1rem 0; }
+.form-success .check { font-size: 2.5rem; margin-bottom: 8px; }
+.form-success p { font-size: 14px; color: #3B6D11; font-weight: 500; }
+
+/* ============================================================
+   FEEDBACK SECTION
+   ============================================================ */
+.feedback-section { padding: 2.5rem; background: var(--cream-2); }
+
+.feedback-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; }
+
+/* Write feedback */
+.feedback-write {
+  background: #FFFCF8;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.feedback-write h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+.feedback-write .sub { font-size: 12.5px; color: var(--text-2); margin-bottom: 1.25rem; }
+
+.stars-row { display: flex; gap: 6px; margin-bottom: 0.75rem; }
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.2;
+  transition: opacity 0.15s, transform 0.2s cubic-bezier(.34,1.56,.64,1);
+  user-select: none;
+  line-height: 1;
+}
+.star:hover, .star.active { opacity: 1; transform: scale(1.2); }
+.rating-label { font-size: 12px; color: var(--text-2); min-height: 18px; margin-bottom: 1rem; }
+
+.feedback-inputs { display: flex; flex-direction: column; gap: 10px; }
+.feedback-inputs input, .feedback-inputs textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.feedback-inputs input:focus, .feedback-inputs textarea:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(196,98,42,0.08);
+}
+.feedback-inputs input::placeholder, .feedback-inputs textarea::placeholder { color: var(--text-3); }
+
+.btn-feedback {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 22px;
+  background: var(--amber);
+  color: var(--cream);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.04em;
+}
+.btn-feedback:hover {
+  background: #a8521f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(196,98,42,0.3);
+}
+.feedback-done { display: none; text-align: center; padding: 1.5rem 0; }
+.feedback-done .big { font-size: 3rem; margin-bottom: 10px; }
+.feedback-done p { font-size: 14px; color: #3B6D11; font-weight: 500; }
+
+/* Reviews list */
+.feedback-reviews h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+.reviews-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+.reviews-avg {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--amber);
+  line-height: 1;
+}
+.reviews-right { }
+.reviews-stars { font-size: 16px; line-height: 1; margin-bottom: 3px; }
+.reviews-count { font-size: 11px; color: var(--text-3); }
+
+.reviews-list { display: flex; flex-direction: column; gap: 10px; max-height: 340px; overflow-y: auto; padding-right: 4px; }
+.reviews-list::-webkit-scrollbar { width: 4px; }
+.reviews-list::-webkit-scrollbar-thumb { background: var(--cream-3); border-radius: 2px; }
+
+.review-card {
+  background: #FFFCF8;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+}
+.review-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(196,98,42,0.2);
+}
+.review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.review-author { font-size: 13px; font-weight: 600; color: var(--brown); }
+.review-stars { font-size: 13px; }
+.review-text { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+.review-date { font-size: 11px; color: var(--text-3); margin-top: 5px; }
+.review-new { border-left: 3px solid var(--amber); }
+
+/* ============================================================
+   DARK FOOTER
+   ============================================================ */
+.dark-footer {
+  background: var(--dark-1);
+  color: #D4C8BC;
+  padding: 3.5rem 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.dark-footer::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,98,42,0.06) 0%, transparent 70%);
+  top: -200px; right: -150px;
+  pointer-events: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.footer-brand img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+.footer-brand span { font-style: italic; }
+.footer-tagline { font-size: 13px; color: #8a7e78; line-height: 1.7; margin-bottom: 1.5rem; max-width: 260px; }
+
+/* ── FOOTER ACTION BUTTONS ── */
+.footer-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 0; }
+.footer-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: #C8BDB8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  width: fit-content;
+  transition: all 0.25s ease;
+}
+.footer-action-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+.footer-action-btn:hover { transform: translateX(4px); color: #fff; }
+.footer-action-btn.fab-wa:hover  { background: rgba(37,211,102,0.15); border-color: #25D366; }
+.footer-action-btn.fab-gm:hover  { background: rgba(234,67,53,0.12); border-color: #EA4335; }
+.footer-action-btn.fab-call:hover { background: rgba(196,98,42,0.2); border-color: var(--amber); }
+
+/* SVG icon helpers */
+.svc-icon { display:inline-flex; align-items:center; justify-content:center; }
+.svc-icon svg { width:100%; height:100%; }
+
+/* ── GOOGLE REVIEW BUTTON (in footer) ── */
+.google-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.25rem;
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: #D4C8BC;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.google-review-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.google-review-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* ── GOOGLE MAPS BANNER (in reviews) ── */
+.gmaps-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+  text-decoration: none;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  cursor: pointer;
+  max-width: 100%;
+}
+.gmaps-banner:hover {
+  box-shadow: 0 4px 20px rgba(234,67,53,0.12);
+  transform: translateY(-2px);
+  border-color: #EA4335;
+}
+.gmaps-g-icon {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: #FEF3F2;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #FECDC9;
+}
+.gmaps-g-icon svg { width: 16px !important; height: 16px !important; display: block; }
+.gmaps-banner-text { flex: 1; min-width: 0; overflow: hidden; }
+.gmaps-banner-title { font-size: 13px; font-weight: 600; color: var(--brown); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gmaps-banner-sub   { font-size: 11px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gmaps-banner-arrow { font-size: 16px; color: #EA4335; flex-shrink: 0; font-weight: 600; }
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+.footer-links { display: flex; flex-direction: column; gap: 9px; }
+.footer-links a {
+  font-size: 13px;
+  color: #8a7e78;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.footer-links a:hover { color: var(--gold); transform: translateX(4px); }
+
+.footer-hours { font-size: 13px; color: #8a7e78; line-height: 1.7; }
+.footer-hours strong { color: #D4C8BC; display: block; margin-bottom: 3px; }
+
+.footer-contact-link {
+  display: block;
+  font-size: 13px;
+  color: #8a7e78;
+  text-decoration: none;
+  margin-bottom: 4px;
+  transition: color 0.2s;
+}
+.footer-contact-link:hover { color: var(--gold); }
+
+.footer-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 1.75rem; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-copy { font-size: 11px; color: #5a4e48; }
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+.footer-bottom-links a {
+  font-size: 11px;
+  color: #5a4e48;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-bottom-links a:hover { color: #8a7e78; }
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,15,6,0.5);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: #FFFCF8;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 32px 80px rgba(26,15,6,0.25);
+  position: relative;
+  animation: modalIn 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+.modal-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  margin-bottom: 1.1rem;
+}
+.modal h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 6px;
+}
+.modal p { font-size: 14px; color: var(--text-2); line-height: 1.7; margin-bottom: 1rem; }
+.modal ul { list-style: none; margin-bottom: 1.25rem; }
+.modal ul li {
+  font-size: 13px;
+  color: var(--brown);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modal ul li::before {
+  content: '✓';
+  color: var(--amber);
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.modal ul li:last-child { border-bottom: none; }
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-2);
+  background: var(--cream-2);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: background 0.15s, transform 0.15s;
+}
+.modal-close:hover { background: var(--cream-3); transform: rotate(90deg); }
+.modal-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: var(--brown);
+  color: var(--cream);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.modal-wa:hover { background: var(--amber); transform: translateY(-2px); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.9) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .landing-hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-right { display: none; }
+  .hero-sub { margin: 0 auto 2rem; }
+  .hero-actions { justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .feedback-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .landing-nav { padding: 1rem 1.5rem; }
+  .landing-nav-links { display: none; }
+  .section, .contact-section, .feedback-section { padding: 1.5rem 1rem; }
+  .main-nav { padding: 0.6rem 0.6rem; }
+  .divider { margin: 0 1rem; }
+  .info-row { flex-wrap: wrap; }
+  .info-block { border-right: none; border-bottom: 1px solid var(--border); min-width: 45%; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .dark-footer { padding: 2.5rem 1.5rem 1.5rem; }
+  .hero-h1 { font-size: 2.8rem; }
+  .landing-hero { padding: 1rem 1.5rem 2rem; }
+}
+
+</style>
+
+  <!-- Inline SVG icon defs -->
+  <style>
+    /* Card icon wrappers — MUST be constrained */
+    .ci { display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+    .ci svg { width:26px !important; height:26px !important; flex-shrink:0; }
+
+    /* Float card icon */
+    .fc-icon .ci svg { width:32px !important; height:32px !important; }
+
+    /* Modal icon */
+    .mi svg { width:28px !important; height:28px !important; }
+
+    /* Footer action buttons — force small SVG */
+    .footer-action-btn svg { width:16px !important; height:16px !important; flex-shrink:0; }
+    .footer-action-btn { fill: currentColor; }
+
+    /* Google Maps banner — small icon only */
+    .gmaps-g-icon svg { width:20px !important; height:20px !important; }
+
+    /* Nav brand gap fix */
+    .main-nav { gap: 0; }
+    .main-nav-brand { margin-right: 2.5rem; }
+
+    /* Hero page title top padding */
+    .page-hero { padding-top: 2.5rem; }
+  /* ── PROFILE & AUTH ── */
+  .btn-login {
+    display: flex; align-items: center; gap: 6px;
+    background: var(--amber);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-login:hover { background: var(--amber-2); }
+  .profile-chip {
+    display: flex; align-items: center; gap: 6px;
+    background: var(--cream-2);
+    border: 1.5px solid var(--border-2);
+    border-radius: 999px;
+    padding: 4px 12px 4px 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .profile-chip:hover { border-color: var(--amber); }
+  .profile-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--amber);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: white;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .profile-name { font-size: 13px; font-weight: 600; color: var(--brown); }
+
+  /* PROFILE MODAL */
+  .profile-modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none; align-items: flex-end; justify-content: center;
+    padding: 0;
+  }
+  .profile-modal-overlay.open { display: flex; }
+  .profile-modal {
+    background: white;
+    border-radius: 24px 24px 0 0;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 -8px 40px rgba(44,26,14,0.2);
+  }
+  .profile-modal-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .profile-modal-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--amber);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; color: white;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .profile-modal-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .profile-modal-info { flex: 1; }
+  .profile-modal-name { font-size: 16px; font-weight: 700; color: var(--brown); }
+  .profile-modal-email { font-size: 12px; color: var(--text-3); }
+  .btn-logout-profile {
+    padding: 8px 16px;
+    background: #fee2e2; color: #ef4444;
+    border: none; border-radius: 999px;
+    font-size: 12px; font-weight: 600;
+    cursor: pointer; font-family: var(--font-body);
+  }
+  .profile-trx-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--brown); margin-bottom: 1rem;
+  }
+  .profile-trx-item {
+    padding: 0.875rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .profile-trx-item:last-child { border-bottom: none; }
+  .profile-trx-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .profile-trx-date { font-size: 12px; color: var(--text-3); }
+  .profile-trx-total {
+    font-family: var(--font-display);
+    font-size: 1.1rem; font-weight: 700; color: var(--amber);
+  }
+  .profile-trx-items { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+  .profile-empty {
+    text-align: center; padding: 2rem 1rem;
+    color: var(--text-3); font-size: 14px;
+  }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     MODAL
+     ================================================================ -->
+<div class="modal-overlay" id="modal" onclick="closeModalOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalBtn()">&#x2715;</button>
+    <div class="modal-icon mi" id="modal-icon"></div>
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+    <ul id="modal-list"></ul>
+    <a class="modal-wa" href="https://wa.me/6281381930365" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.847L.057 23.885a.5.5 0 0 0 .657.635l6.239-1.637A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.513-5.231-1.41l-.374-.22-3.863 1.013 1.013-3.739-.234-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Tanya via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ================================================================
+     LANDING PAGE
+     ================================================================ -->
+<div class="landing">
+  <div class="landing-bg-circle"></div>
+
+  <nav class="landing-nav">
+    <div class="landing-brand">
+      <img src="favicon (2).png" alt="Logo Warung Manop" class="nav-logo"/>
+      Warung <span>Manop</span>
+    </div>
+    <div class="landing-nav-links">
+      <a onclick="scrollToId('sembako')">Sembako</a>
+      <a onclick="scrollToId('konter')">Konter</a>
+      <a onclick="scrollToId('keuangan')">Keuangan</a>
+      <a onclick="scrollToId('kontak')">Kontak</a>
+    </div>
+    <div id="landing-auth-btn"></div>
+  </nav>
+
+  <div class="landing-hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Kelapa Gading Timur &middot; Jakarta Utara </div>
+      <h1 class="hero-h1">
+        Semua Ada,<br>
+        <em>Satu Tempat.</em>
+      </h1>
+      <p class="hero-sub">Dari sembako harian, top up game, token listrik, sampai tarik &amp; setor tunai &mdash; Warung Manop hadir untuk semua kebutuhanmu.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" onclick="scrollToId('sembako')">Lihat Layanan &rarr;</a>
+        <a class="btn-outline" href="https://wa.me/6281381930365" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.847L.057 23.885a.5.5 0 0 0 .657.635l6.239-1.637A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.513-5.231-1.41l-.374-.22-3.863 1.013 1.013-3.739-.234-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Chat WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="float-grid">
+        <div class="float-card">
+          <div class="fc-icon ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+          <div class="fc-label">Sembako</div>
+        </div>
+        <div class="float-card">
+          <div class="fc-icon ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l3 3 2-2 3 3"/></svg>
+          </div>
+          <div class="fc-label">Top Up Game</div>
+        </div>
+        <div class="float-card">
+          <div class="fc-icon ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="fc-label">Token Listrik</div>
+        </div>
+        <div class="float-card">
+          <div class="fc-icon ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div class="fc-label">E-Wallet</div>
+        </div>
+        <div class="float-card">
+          <div class="fc-icon ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="fc-label">Tarik Tunai</div>
+        </div>
+        <div class="float-card">
+          <div class="fc-icon ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-10 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+          </div>
+          <div class="fc-label">Gas &amp; Galon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">&#x25BC; Scroll untuk lihat semua layanan</div>
+</div>
+
+<!-- ================================================================
+     STICKY NAV
+     ================================================================ -->
+<nav class="main-nav">
+  <div class="main-nav-brand">
+    <img src="favicon (2).png" alt="Logo" class="nav-logo" />
+    Warung <span>Manop</span>
+  </div>
+  <div class="main-nav-links">
+    <a onclick="scrollToId('sembako')">Sembako</a>
+    <a onclick="scrollToId('konter')">Konter</a>
+    <a onclick="scrollToId('keuangan')">Keuangan</a>
+    <a onclick="scrollToId('kontak')">Kontak</a>
+  </div>
+</nav>
+
+<!-- ================================================================
+     PAGE HERO
+     ================================================================ -->
+<div class="page-hero fade-up">
+  <div class="page-hero-badge">&#x2605; Warung Serba Ada &middot; Dekat &amp; Terpercaya</div>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:0.5rem;margin-top:0.25rem">
+
+    <h1 style="margin-bottom:0">Warung Manop &mdash; <span>semua ada,</span><br>satu tempat.</h1>
+  </div>
+  <p>Dari kebutuhan dapur hingga top up game, bayar listrik, sampai tarik &amp; setor tunai &mdash; semuanya bisa di sini.</p>
+</div>
+
+<!-- ================================================================
+     SEMBAKO
+     ================================================================ -->
+<div class="section fade-up" id="sembako">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Sembako &amp; Kebutuhan Rumah Tangga</span>
+  </div>
+  <div class="grid-4">
+    <div class="card" onclick="openModal('sembako1')">
+      <div class="card-icon ic-green"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      </div></div>
+      <h3>Bahan Pokok</h3>
+      <p>Beras, minyak goreng, gula, tepung, dan kebutuhan dapur sehari-hari.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('sembako2')">
+      <div class="card-icon ic-amber"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+      </div></div>
+      <h3>Bumbu &amp; Rempah</h3>
+      <p>Aneka bumbu sachet, kecap, saos, dan pelengkap masak lainnya.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('sembako3')">
+      <div class="card-icon ic-teal"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div></div>
+      <h3>Keperluan Rumah</h3>
+      <p>Sabun, deterjen, pewangi, dan lain-lain.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('gas')">
+      <div class="card-icon ic-orange"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2c0 0-5 4.5-5 9a5 5 0 0 0 10 0c0-2.5-1.5-5-2.5-6.5C14 6 13 8 12 8c-1 0-1.5-2-1.5-3.5C10.5 3.5 12 2 12 2z"/>
+          <path d="M9 17c0 1.7 1.3 3 3 3s3-1.3 3-3"/>
+        </svg>
+      </div></div>
+      <h3>Gas &amp; Air Galon</h3>
+      <p>Gas LPG 3kg &amp; air galon isi ulang dan baru.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ================================================================
+     KONTER
+     ================================================================ -->
+<div class="section fade-up" id="konter">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Layanan Konter Digital</span>
+  </div>
+  <div class="grid-2">
+    <div class="card" onclick="openModal('game')">
+      <div class="card-icon ic-blue"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h2M8 7v2M14 7.5h2M16 9.5h-2"/></svg>
+      </div></div>
+      <h3>Top Up Game</h3>
+      <p>Mobile Legends, Free Fire, proses cepat dan mudah.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('ewallet')">
+      <div class="card-icon ic-purple"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div></div>
+      <h3>Dompet Digital</h3>
+      <p>Top up DANA, GoPay, OVO, ShopeePay, dan e-wallet lainnya.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('pulsa')">
+      <div class="card-icon ic-coral"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div></div>
+      <h3>M-Banking &amp; Pulsa</h3>
+      <p>Transfer antar bank, isi pulsa, paket data semua operator.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('listrik')">
+      <div class="card-icon ic-amber"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div></div>
+      <h3>Token Listrik</h3>
+      <p>Isi token listrik PLN semua golongan. Proses cepat dan mudah.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ================================================================
+     KEUANGAN
+     ================================================================ -->
+<div class="section fade-up" id="keuangan">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">Layanan Keuangan</span>
+  </div>
+  <div class="grid-2">
+    <div class="card" onclick="openModal('tarik')">
+      <div class="card-icon ic-teal"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div></div>
+      <h3>Tarik Tunai</h3>
+      <p>Butuh uang cash? Bisa tarik tunai langsung di Warung Manop tanpa perlu ke ATM.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+    <div class="card" onclick="openModal('setor')">
+      <div class="card-icon ic-green"><div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 10 12 6 8 10"/>
+          <line x1="12" y1="6" x2="12" y2="18"/>
+          <path d="M20 20H4"/>
+        </svg>
+      </div></div>
+      <h3>Setor Tunai</h3>
+      <p>Setor uang ke rekening bank pilihan Anda dengan proses yang mudah dan cepat.</p>
+      <div class="card-hint">Tap untuk detail <span class="card-arrow">&rarr;</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ================================================================
+     INFO ROW
+     ================================================================ -->
+<div class="info-row fade-up">
+  <div class="info-block">
+    <div class="lbl">Alamat</div>
+    <div class="val">Jl. Perintis Kemerdekaan,<br>Gg. Pejuang V RT 03/RW 04 No.105<br>Kelapa Gading Timur,<br>Jakarta Utara, DKI Jakarta</div>
+  </div>
+  <div class="info-block">
+    <div class="lbl">Jam Buka</div>
+    <div class="val">Senin &ndash; Minggu<br>07.00 &ndash; 22.00 WIB</div>
+  </div>
+  <div class="info-block">
+    <div class="lbl">Kontak</div>
+    <div class="val">
+      <a href="tel:+6281381930365">+62 813-8193-0365</a><br>
+      <a class="wa-pill" href="https://wa.me/6281381930365" target="_blank" rel="noopener">
+        <span class="wa-dot"></span> Chat WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="info-block">
+    <div class="lbl">Pembayaran</div>
+    <div class="val">
+      <span class="pay-tag">Tunai</span>
+      <span class="pay-tag">QRIS</span>
+      <span class="pay-tag">Transfer</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ================================================================
+     KONTAK
+     ================================================================ -->
+<div class="contact-section fade-up" id="kontak">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">Lokasi &amp; Hubungi Kami</span>
+  </div>
+  <div class="contact-grid">
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.9!2d106.9014!3d-6.1765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f500486d1245%3A0x1e9ac3558ac972b1!2sWarung%20Mama%20Noval!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Warung Manop">
+      </iframe>
+    </div>
+    <div class="contact-form">
+      <h3>Kirim Pesan</h3>
+      <p class="sub">Ada pertanyaan atau pesanan? Isi form di bawah dan kami akan segera menghubungi kamu.</p>
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" id="f-nama" placeholder="Nama lengkap kamu" />
+        <span class="err-msg" id="err-nama">Nama tidak boleh kosong.</span>
+      </div>
+      <div class="form-group">
+        <label>Email <span style="color:var(--text-3);font-size:10px">(opsional)</span></label>
+        <input type="email" id="f-email" placeholder="contoh@email.com" />
+        <span class="err-msg" id="err-email">Format email tidak valid.</span>
+      </div>
+      <div class="form-group">
+        <label>No. HP</label>
+        <input type="tel" id="f-hp" placeholder="+62 8xx xxxx xxxx" />
+        <span class="err-msg" id="err-hp">Nomor HP harus diawali 08 atau +62, minimal 9 angka.</span>
+      </div>
+      <div class="form-group">
+        <label>Pesan</label>
+        <textarea id="f-pesan" rows="3" placeholder="Tulis pesan atau pertanyaan kamu..."></textarea>
+        <span class="err-msg" id="err-pesan">Pesan tidak boleh kosong.</span>
+      </div>
+      <button class="btn-send" onclick="sendForm()">Kirim Pesan &rarr;</button>
+      <div class="form-success" id="form-success">
+        <div class="check">&#x2705;</div>
+        <p>Pesan terkirim! Kami akan menghubungi kamu segera.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ================================================================
+     FEEDBACK
+     ================================================================ -->
+<div class="feedback-section fade-up" id="feedback">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">Ulasan &amp; Feedback</span>
+  </div>
+  <div class="feedback-layout">
+    <div class="feedback-write">
+      <h3>Beri Penilaian</h3>
+      <p class="sub">Ceritakan pengalamanmu berbelanja di sini.</p>
+      <div class="stars-row" id="stars">
+        <span class="star" onclick="setRating(1)">&#x2B50;</span>
+        <span class="star" onclick="setRating(2)">&#x2B50;</span>
+        <span class="star" onclick="setRating(3)">&#x2B50;</span>
+        <span class="star" onclick="setRating(4)">&#x2B50;</span>
+        <span class="star" onclick="setRating(5)">&#x2B50;</span>
+      </div>
+      <div class="rating-label" id="rating-label">Pilih bintang untuk memberi nilai</div>
+      <div class="feedback-inputs" id="feedback-inputs">
+        <input type="text" id="fb-nama" placeholder="Nama kamu" />
+        <textarea id="fb-pesan" rows="3" placeholder="Tulis pengalaman atau saranmu..."></textarea>
+        <button class="btn-feedback" onclick="sendFeedback()">Kirim Feedback &rarr;</button>
+      </div>
+      <div class="feedback-done" id="feedback-done">
+        <div class="big">&#x1F64F;</div>
+        <p>Terima kasih atas feedbackmu!<br>Ulasanmu sudah tampil di sebelah.</p>
+      </div>
+    </div>
+
+    <div class="feedback-reviews">
+      <h3>Apa Kata Pelanggan</h3>
+
+      <!-- Google Maps Banner -->
+      <a class="gmaps-banner" href="https://goo.gl/maps/DDdg6k1yBqePsQ1T6" target="_blank" rel="noopener">
+        <div class="gmaps-g-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+            <path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+          </svg>
+        </div>
+        <div class="gmaps-banner-text">
+          <div class="gmaps-banner-title">Lihat Ulasan Asli di Google Maps</div>
+          <div class="gmaps-banner-sub">Warung Mama Noval &mdash; Kelapa Gading Timur</div>
+        </div>
+        <div class="gmaps-banner-arrow">&rarr;</div>
+      </a>
+
+      <!-- User submitted reviews -->
+      <div id="user-reviews-wrap" style="display:none">
+        <div class="reviews-meta">
+          <div class="reviews-avg" id="reviews-avg">5.0</div>
+          <div class="reviews-right">
+            <div class="reviews-stars" id="reviews-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+            <div class="reviews-count" id="reviews-count">0 ulasan dari pengunjung website</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-list" id="reviews-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     DARK FOOTER
+     ================================================================ -->
+<footer class="dark-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="favicon (2).png" alt="Logo Warung Manop" />
+        Warung <span>Manop</span>
+      </div>
+      <p class="footer-tagline">Warung serba ada di Kelapa Gading Timur, Jakarta Utara. Dekat, mudah, dan terpercaya untuk semua kebutuhan sehari-hari.</p>
+      <div class="footer-actions">
+        <a class="footer-action-btn fab-wa" href="https://wa.me/6281381930365" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.847L.057 23.885a.5.5 0 0 0 .657.635l6.239-1.637A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.513-5.231-1.41l-.374-.22-3.863 1.013 1.013-3.739-.234-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Chat WhatsApp
+        </a>
+        <a class="footer-action-btn fab-gm" href="https://goo.gl/maps/DDdg6k1yBqePsQ1T6" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#EA4335" style="flex-shrink:0"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+          Temukan di Google Maps
+        </a>
+        <a class="footer-action-btn fab-call" href="tel:+6281381930365">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          +62 813-8193-0365
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Layanan</div>
+      <div class="footer-links">
+        <a onclick="scrollToId('sembako')">Sembako &amp; Kebutuhan Rumah</a>
+        <a onclick="scrollToId('konter')">Top Up Game</a>
+        <a onclick="scrollToId('konter')">Dompet Digital &amp; Pulsa</a>
+        <a onclick="scrollToId('konter')">Token Listrik PLN</a>
+        <a onclick="scrollToId('keuangan')">Tarik &amp; Setor Tunai</a>
+        <a onclick="scrollToId('sembako')">Gas &amp; Air Galon</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Informasi</div>
+      <div class="footer-links">
+        <a onclick="scrollToId('kontak')">Lokasi Kami</a>
+        <a onclick="scrollToId('kontak')">Hubungi Kami</a>
+        <a onclick="scrollToId('feedback')">Beri Feedback</a>
+      </div>
+      <div style="margin-top:1.5rem">
+        <div class="footer-col-title">Jam Buka</div>
+        <div class="footer-hours">
+          <strong>Senin &ndash; Minggu</strong>
+          07.00 &ndash; 22.00 WIB
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Hubungi Kami</div>
+      <a class="footer-contact-link" href="tel:+6281381930365">+62 813-8193-0365</a>
+      <a class="footer-contact-link" href="https://wa.me/6281381930365" target="_blank" rel="noopener">Chat WhatsApp</a>
+      <div style="margin-top:1rem;font-size:12px;color:#5a4e48;line-height:1.7">
+        Jl. Perintis Kemerdekaan,<br>
+        Gg. Pejuang V RT 03/RW 04 No.105<br>
+        Kelapa Gading Timur,<br>
+        Jakarta Utara 14240
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Warung Manop &mdash; Jakarta Utara. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Made by noval</a>
+      <a href="#">Kebijakan Privasi</a>
+      <a href="#">Syarat &amp; Ketentuan</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================================================================
+     JAVASCRIPT
+     ================================================================ -->
+<script type="module">
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+function scrollToId(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+/* MODAL DATA */
+const SVG = {
+  cart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>',
+  spice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>',
+  home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+  gas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-5 4.5-5 9a5 5 0 0 0 10 0c0-2.5-1.5-5-2.5-6.5C14 6 13 8 12 8c-1 0-1.5-2-1.5-3.5C10.5 3.5 12 2 12 2z"/><path d="M9 17c0 1.7 1.3 3 3 3s3-1.3 3-3"/></svg>',
+  game: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+  wallet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+  cash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  bank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 10 12 6 8 10"/><line x1="12" y1="6" x2="12" y2="18"/><path d="M20 20H4"/></svg>',
+};
+
+const modalData = {
+  sembako1: { svg: SVG.cart,   bg: '#EAF3DE', color: '#3B6D11', title: 'Bahan Pokok',       desc: 'Tersedia lengkap kebutuhan dapur harian dengan harga terjangkau dan kualitas terjamin.',      items: ['Beras berbagai merek & ukuran', 'Minyak goreng (curah & kemasan)', 'Gula pasir & gula merah', 'Tepung terigu & tepung beras', 'Telur ayam & mie instan'] },
+  sembako2: { svg: SVG.spice,  bg: '#FAEEDA', color: '#854F0B', title: 'Bumbu & Rempah',     desc: 'Lengkapi masakan Anda dengan berbagai pilihan bumbu dan rempah tersedia di sini.',            items: ['Bumbu sachet instan (Royco, Masako, dll)', 'Kecap manis & kecap asin', 'Saos tomat & sambal botol', 'Garam, merica, & penyedap rasa', 'Santan instan & bumbu jadi'] },
+  sembako3: { svg: SVG.home,   bg: '#E1F5EE', color: '#0F6E56', title: 'Keperluan Rumah',    desc: 'Semua kebutuhan kebersihan dan perlengkapan rumah tangga tersedia lengkap.',                  items: ['Sabun mandi & sabun cuci', 'Deterjen bubuk & cair', 'Pembersih lantai & toilet', 'Tisu & plastik pembungkus'] },
+  gas:      { svg: SVG.gas,    bg: '#FDE8D8', color: '#993C1D', title: 'Gas & Air Galon',     desc: 'Tersedia gas LPG dan air galon untuk kebutuhan rumah tangga sehari-hari.',                   items: ['Gas LPG 3kg (subsidi)', 'Air galon isi ulang', 'Air galon baru (berbagai merek)', 'Hubungi kami untuk info ketersediaan'] },
+  game:     { svg: SVG.game,   bg: '#E6F1FB', color: '#185FA5', title: 'Top Up Game',         desc: 'Isi diamond, UC, atau mata uang game favorit kamu dengan cepat dan harga bersaing.',         items: ['Mobile Legends (Diamond)', 'Free Fire (Diamond)', 'proses cepat dan mudah'] },
+  ewallet:  { svg: SVG.wallet, bg: '#EEEDFE', color: '#534AB7', title: 'Dompet Digital',      desc: 'Top up saldo e-wallet kamu dengan mudah, tidak perlu ATM atau rekening bank.',               items: ['DANA', 'GoPay', 'OVO', 'ShopeePay', '& e-wallet lainnya'] },
+  pulsa:    { svg: SVG.phone,  bg: '#FAECE7', color: '#993C1D', title: 'M-Banking & Pulsa',   desc: 'Isi pulsa dan paket data semua operator, serta layanan transfer antar bank.',                 items: ['Pulsa semua operator (Telkomsel, XL, Indosat, dll)', 'Paket data internet', 'Transfer BRI, BCA, Mandiri, BNI, dll', 'Cek saldo & mutasi rekening'] },
+  listrik:  { svg: SVG.bolt,   bg: '#FAEEDA', color: '#854F0B', title: 'Token Listrik PLN',   desc: 'Isi token listrik PLN untuk semua golongan daya dengan proses yang cepat dan mudah.',        items: ['Semua golongan daya (900VA, 1300VA, 2200VA, dst)', 'Nominal fleksibel sesuai kebutuhan', 'Proses cepat & mudah', 'Berlaku untuk seluruh wilayah Indonesia'] },
+  tarik:    { svg: SVG.cash,   bg: '#E1F5EE', color: '#0F6E56', title: 'Tarik Tunai',         desc: 'Butuh uang cash tapi jauh dari ATM? Tarik tunai langsung di Warung Manop.',                  items: ['Tarik tunai dari saldo e-wallet', 'Tarik via transfer bank', 'Proses cepat & aman'] },
+  setor:    { svg: SVG.bank,   bg: '#EAF3DE', color: '#3B6D11', title: 'Setor Tunai',         desc: 'Setor uang tunai ke rekening bank tujuan dengan proses yang mudah dan cepat.',               items: ['Setor ke semua rekening bank', 'BRI, BCA, Mandiri, BNI, dan lainnya', 'Proses mudah dan cepat'] },
+};
+
+function openModal(id) {
+  const d = modalData[id];
+  const iconEl = document.getElementById('modal-icon');
+  iconEl.innerHTML = '<div style="color:' + d.color + ';width:30px;height:30px">' + d.svg + '</div>';
+  iconEl.style.background = d.bg;
+  document.getElementById('modal-title').textContent = d.title;
+  document.getElementById('modal-desc').textContent = d.desc;
+  document.getElementById('modal-list').innerHTML = d.items.map(i => '<li>' + i + '</li>').join('');
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModalBtn() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
+function closeModalOverlay(e) { if (e.target === document.getElementById('modal')) closeModalBtn(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+
+/* FORM VALIDATION */
+function validateNama() {
+  const v = document.getElementById('f-nama').value.trim();
+  const ok = v.length >= 2;
+  document.getElementById('f-nama').classList.toggle('error', !ok);
+  document.getElementById('err-nama').classList.toggle('show', !ok);
+  return ok;
+}
+function validateEmail() {
+  const v = document.getElementById('f-email').value.trim();
+  if (!v) return true;
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  document.getElementById('f-email').classList.toggle('error', !ok);
+  document.getElementById('err-email').classList.toggle('show', !ok);
+  return ok;
+}
+function validateHP() {
+  const v = document.getElementById('f-hp').value.trim().replace(/[\s-]/g, '');
+  const ok = /^(\+62|62|08)\d{7,13}$/.test(v);
+  document.getElementById('f-hp').classList.toggle('error', !ok);
+  document.getElementById('err-hp').classList.toggle('show', !ok);
+  return ok;
+}
+function validatePesan() {
+  const v = document.getElementById('f-pesan').value.trim();
+  const ok = v.length >= 3;
+  document.getElementById('err-pesan').classList.toggle('show', !ok);
+  return ok;
+}
+document.getElementById('f-nama').addEventListener('blur', validateNama);
+document.getElementById('f-email').addEventListener('blur', validateEmail);
+document.getElementById('f-hp').addEventListener('blur', validateHP);
+document.getElementById('f-pesan').addEventListener('blur', validatePesan);
+
+function sendForm() {
+  if (!validateNama() | !validateEmail() | !validateHP() | !validatePesan()) return;
+  const nama  = document.getElementById('f-nama').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const hp    = document.getElementById('f-hp').value.trim();
+  const pesan = document.getElementById('f-pesan').value.trim();
+  let msg = 'Halo Warung Manop!\n\nNama: ' + nama;
+  if (email) msg += '\nEmail: ' + email;
+  msg += '\nNo. HP: ' + hp + '\nPesan: ' + pesan;
+  window.open('https://wa.me/6281381930365?text=' + encodeURIComponent(msg), '_blank');
+  document.getElementById('form-success').style.display = 'block';
+  document.querySelector('.btn-send').style.display = 'none';
+}
+
+/* ── FIREBASE SETUP ── */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp, where }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD4w6LvtDtFNoLKUob981mbN2_OzX8pJFA",
+  authDomain: "warung-manop.firebaseapp.com",
+  projectId: "warung-manop",
+  storageBucket: "warung-manop.firebasestorage.app",
+  messagingSenderId: "890866510399",
+  appId: "1:890866510399:web:20ad7fcb6e35168d72e68a",
+  measurementId: "G-RN9FN702FM"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
+
+/* ── AUTH & PROFILE ── */
+const ADMIN_EMAILS = ['almaira.shaqeena@gmail.com'];
+
+function renderAuthBtn(user) {
+  const html = user ? `
+    <div class="profile-chip" onclick="openProfileModal()">
+      <div class="profile-avatar">${user.photoURL ? `<img src="${user.photoURL}">` : (user.displayName||'U')[0].toUpperCase()}</div>
+      <span class="profile-name">${(user.displayName||user.email).split(' ')[0]}</span>
+    </div>
+  ` : `<button class="btn-login" onclick="loginGoogle()">Masuk</button>`;
+  document.getElementById('landing-auth-btn').innerHTML = html;
+}
+
+onAuthStateChanged(auth, user => { renderAuthBtn(user); });
+
+window.loginGoogle = async function() {
+  try { await signInWithPopup(auth, new GoogleAuthProvider()); }
+  catch(e) { alert('Gagal login: ' + e.message); }
+};
+
+window.openProfileModal = async function() {
+  const user = auth.currentUser;
+  if (!user) return;
+  const overlay = document.getElementById('profile-modal-overlay');
+  overlay.classList.add('open');
+
+  const av = document.getElementById('pm-avatar');
+  av.innerHTML = user.photoURL ? `<img src="${user.photoURL}">` : (user.displayName||'U')[0].toUpperCase();
+  document.getElementById('pm-name').textContent = user.displayName || user.email;
+  document.getElementById('pm-email').textContent = user.email;
+  document.getElementById('pm-logout').onclick = async () => { await signOut(auth); overlay.classList.remove('open'); };
+
+  // load riwayat
+  const wrap = document.getElementById('pm-riwayat');
+  wrap.innerHTML = '<div class="profile-empty">Memuat riwayat...</div>';
+  try {
+    const pelangganSnap = await getDocs(collection(db, 'wm_pelanggan'));
+    const matched = pelangganSnap.docs.find(d => {
+      const data = d.data();
+      return data.email && data.email.toLowerCase().trim() === user.email.toLowerCase().trim();
+    });
+    if (!matched) {
+      wrap.innerHTML = '<div class="profile-empty">Belum ada riwayat belanja.<br>Minta pemilik warung untuk mendaftarkan email kamu!</div>';
+      return;
+    }
+    const q = query(collection(db, 'wm_transaksi'), where('pelangganId', '==', matched.id));
+    const snap = await getDocs(q);
+    const trxs = snap.docs.map(d => d.data()).sort((a,b) => (b.timestamp?.seconds||0) - (a.timestamp?.seconds||0));
+    if (trxs.length === 0) {
+      wrap.innerHTML = '<div class="profile-empty">Belum ada transaksi tercatat.</div>';
+      return;
+    }
+    wrap.innerHTML = trxs.map(t => `
+      <div class="profile-trx-item">
+        <div class="profile-trx-header">
+          <div class="profile-trx-date">${t.tanggal || '-'}</div>
+          <div class="profile-trx-total">Rp ${(t.total||0).toLocaleString('id-ID')}</div>
+        </div>
+        <div class="profile-trx-items">${(t.items||[]).map(i => `${i.nama} ×${i.qty}`).join(' · ')}</div>
+      </div>
+    `).join('');
+  } catch(e) {
+    wrap.innerHTML = '<div class="profile-empty">Gagal memuat riwayat.</div>';
+  }
+};
+
+window.closeProfileModal = function(e) {
+  if (e.target === document.getElementById('profile-modal-overlay')) {
+    document.getElementById('profile-modal-overlay').classList.remove('open');
+  }
+};
+
+/* REVIEWS */
+function starsHtml(n) { return '⭐'.repeat(n) + (n < 5 ? '☆'.repeat(5 - n) : ''); }
+
+async function loadReviews() {
+  const wrap = document.getElementById('user-reviews-wrap');
+  const list = document.getElementById('reviews-list');
+
+  list.innerHTML = '<p style="font-size:13px;color:var(--text-3);margin-top:8px">Memuat ulasan...</p>';
+
+  try {
+    const q = query(collection(db, 'wm_reviews'), orderBy('timestamp', 'desc'));
+    const snapshot = await getDocs(q);
+    const reviews = snapshot.docs.map(d => d.data());
+
+    if (reviews.length === 0) {
+      wrap.style.display = 'none';
+      list.innerHTML = '<p style="font-size:13px;color:var(--text-3);margin-top:8px">Belum ada ulasan dari pengunjung website. Jadilah yang pertama!</p>';
+      return;
+    }
+
+    wrap.style.display = 'block';
+    const avg = (reviews.reduce((s, r) => s + r.bintang, 0) / reviews.length).toFixed(1);
+    document.getElementById('reviews-avg').textContent = avg;
+    document.getElementById('reviews-stars').textContent = '⭐'.repeat(Math.round(avg));
+    document.getElementById('reviews-count').textContent = reviews.length + ' ulasan dari pengunjung website';
+
+    list.innerHTML = reviews.map(r => `
+      <div class="review-card review-new">
+        <div class="review-top">
+          <span class="review-author">${r.nama}</span>
+          <span class="review-stars">${starsHtml(r.bintang)}</span>
+        </div>
+        <div class="review-text">${r.pesan}</div>
+        <div class="review-date">${r.tanggal}</div>
+      </div>
+    `).join('');
+  } catch (e) {
+    list.innerHTML = '<p style="font-size:13px;color:var(--text-3);margin-top:8px">Gagal memuat ulasan. Coba refresh halaman.</p>';
+  }
+}
+
+/* FEEDBACK */
+let currentRating = 0;
+const ratingLabels = ['', 'Sangat mengecewakan 😞', 'Kurang memuaskan 😐', 'Cukup baik 🙂', 'Memuaskan 😊', 'Luar biasa! 🤩'];
+function setRating(n) {
+  currentRating = n;
+  document.querySelectorAll('.star').forEach((s, i) => s.classList.toggle('active', i < n));
+  document.getElementById('rating-label').textContent = ratingLabels[n];
+}
+
+async function sendFeedback() {
+  if (!currentRating) {
+    document.getElementById('rating-label').innerHTML = '<span style="color:#E24B4A">Pilih dulu bintang penilaianmu!</span>';
+    return;
+  }
+  const nama  = document.getElementById('fb-nama').value.trim() || 'Anonim';
+  const pesan = document.getElementById('fb-pesan').value.trim();
+  const now = new Date();
+  const bulan = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agt','Sep','Okt','Nov','Des'];
+  const tanggal = now.getDate() + ' ' + bulan[now.getMonth()] + ' ' + now.getFullYear();
+
+  const btnKirim = document.querySelector('.btn-feedback');
+  if (btnKirim) { btnKirim.disabled = true; btnKirim.textContent = 'Mengirim...'; }
+
+  try {
+    await addDoc(collection(db, 'wm_reviews'), {
+      nama,
+      bintang: currentRating,
+      pesan: pesan || 'Tidak ada komentar.',
+      tanggal,
+      timestamp: serverTimestamp()
+    });
+  } catch (e) {
+    alert('Gagal menyimpan ulasan. Coba lagi.');
+    if (btnKirim) { btnKirim.disabled = false; btnKirim.textContent = 'Kirim Feedback →'; }
+    return;
+  }
+
+  let msg = 'Feedback untuk Warung Manop!\n\nNilai: ' + currentRating + '/5 bintang\nDari: ' + nama;
+  if (pesan) msg += '\nKomentar: ' + pesan;
+  window.open('https://wa.me/6281381930365?text=' + encodeURIComponent(msg), '_blank');
+
+  await loadReviews();
+  document.getElementById('feedback-done').style.display = 'block';
+  document.getElementById('feedback-inputs').style.display = 'none';
+  document.getElementById('stars').style.display = 'none';
+  document.getElementById('rating-label').style.display = 'none';
+}
+
+/* expose to window for onclick handlers in HTML */
+window.setRating = setRating;
+window.sendFeedback = sendFeedback;
+window.openModal = openModal;
+window.closeModalBtn = closeModalBtn;
+window.closeModalOverlay = closeModalOverlay;
+window.scrollToId = scrollToId;
+window.sendForm = sendForm;
+window.validateNama = validateNama;
+window.validateEmail = validateEmail;
+window.validateHP = validateHP;
+window.validatePesan = validatePesan;
+
+loadReviews();
+</script>
+<!-- PROFILE MODAL -->
+<div class="profile-modal-overlay" id="profile-modal-overlay" onclick="closeProfileModal(event)">
+  <div class="profile-modal">
+    <div class="profile-modal-header">
+      <div class="profile-modal-avatar" id="pm-avatar">?</div>
+      <div class="profile-modal-info">
+        <div class="profile-modal-name" id="pm-name">-</div>
+        <div class="profile-modal-email" id="pm-email">-</div>
+      </div>
+      <button class="btn-logout-profile" id="pm-logout">Keluar</button>
+    </div>
+    <div class="profile-trx-title">🧾 Riwayat Belanja Saya</div>
+    <div id="pm-riwayat"><div class="profile-empty">Memuat...</div></div>
+  </div>
+</div>
+
+</body>
+</html>
